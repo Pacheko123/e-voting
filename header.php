@@ -14,7 +14,7 @@
 <body>
 <!-- <marquee>Welcome To Online Voting System</marquee> -->
 
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar navbar-primary">
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar ">
   <!-- Navbar brand -->
   <div class="container">
     <a class="navbar-brand" href="#">Digital Voter.</a>
