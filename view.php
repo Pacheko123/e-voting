@@ -1,6 +1,41 @@
+<?php include("include/static.php");
+include"connection.php"; ?>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar ">
+<!-- Navbar brand -->
+<div class="container">
+  <a class="navbar-brand" href="">Digital Voter.</a>
+    <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+  aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+<!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+  <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class='nav-item'>
+          <a class="nav-link" href="view.php">HOME</a>
+        </li>
+        <li class='nav-item'>
+          <a class="nav-link" href="view.php">VIEW RESULTS</a>
+        </li>
+        <li class='nav-item'>
+          <a class="nav-link" href="login.php">CREATE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ASPIRANTS</a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- Collapsible content -->
+</div>
+</nav>
 <?php 
 $count = 1;
-$result=mysqli_query($con,"SELECT *FROM aspirant WHERE vote>0 "); ?>
+$result=mysqli_query($con,"SELECT * FROM aspirant WHERE vote>0 "); ?>
 
 <div class="table-responsive text-nowrap">
 
@@ -22,7 +57,7 @@ $result=mysqli_query($con,"SELECT *FROM aspirant WHERE vote>0 "); ?>
     <tbody>
       <tr>
         <!--th scope="row">1</th>-->
-         <?php while ($row=mysqli_fetch_array($result)){
+         <?php while ($row = mysqli_fetch_array($result)){
           ?>
           <tr>
             <td><?php echo $count++ ?></td>
@@ -42,4 +77,5 @@ $result=mysqli_query($con,"SELECT *FROM aspirant WHERE vote>0 "); ?>
     
     </tbody>
   </table>
+
 </div>

@@ -21,68 +21,41 @@ session_start();
 <!-- </div> -->
 <!-- </div> -->
 <!-- <div class="container-fluid"> -->
+
+<?php 
+$count = 1;
+$result=mysqli_query($con,"SELECT * FROM aspirant WHERE asp_seat='chairperson'  "); ?>
+
 <div class="container">
+ <form>
   <div class="row display-asp">
-
-    <div class="card border-success mb-3 col-sm-4" style="max-width: 20rem;">
-      <div class="card-header">Jane Wanjeri</div>
+ <?php while ($row=mysqli_fetch_array($result)){
+          ?>
+          
+    <div class="card border-success mb-3 col-md-4" style="max-width: 20rem;">
+     
+      <div class="card-header"><?php echo $row['asp_name'],' , ','RegNO','---', $row['asp_id']; ?></div>
       <div class="card-body text-success">
-        <h5 class="card-title">Secretary General</h5>
-        <p class="card-text">Jubilee party</p>
-        <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1"></label>
-      </div>
+        <h5 class="card-title"><?php echo $row['asp_seat']; ?></h5>
+        <p class="card-text"><?php echo $row['party']; ?></p>
+     
+        <!-- <input type="radio" name="1" value="1"> -->
+       
+  <a href='cast.php?asp_id=<?php echo $row['asp_id'] ; ?>' class="btn btn-dark"> VOTE</a>
       </div>
     </div>
-    <div class="card border-success mb-3 col-sm-4" style="max-width: 20rem;">
-      <div class="card-header">Jane Wanjeri</div>
-      <div class="card-body text-success">
-        <h5 class="card-title">Secretary General</h5>
-        <p class="card-text">Jubilee party</p>
-        <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1"></label>
-      </div>
 
+    <?php }?>
   </div>
-    </div>
-
-    <div class="card border-success mb-3  col-sm-4" style="max-width: 20rem;">
-      <div class="card-header">Jane Wanjeri</div>
-      <div class="card-body text-success">
-        <h5 class="card-title">Secretary General</h5>
-        <p class="card-text">Jubilee party</p>
-        <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1"></label>
-      </div>
-      </div>
-    </div>
-    <div class="card border-success mb-3  col-sm-4" style="max-width: 20rem;">
-      <div class="card-header">Jane Wanjeri</div>
-      <div class="card-body text-success">
-        <h5 class="card-title">Secretary General</h5>
-        <p class="card-text">Jubilee party</p>
-        <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1"></label>
-      </div>
-      </div>
-    </div>
-    <div class="card border-success mb-3  col-sm-4" style="max-width: 20rem;">
-      <div class="card-header">Jane Wanjeri</div>
-      <div class="card-body text-success">
-        <h5 class="card-title">Secretary General</h5>
-        <p class="card-text">Jubilee party</p>
-        <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1"></label>
-      </div>
-      </div>
-    </div>
-  </div>
+  </form>
 </div>
+
+<!--div class="text-right">
+  <a href='cast.php?asp_id=<?php echo $row['asp_id']; ?>' class="btn btn-dark"> CAST</a>
+
+</div>-->
+     
+   
 
 <!-- Application for a position modal -->
 <form method="post">
@@ -121,7 +94,7 @@ session_start();
         <select class="browser-default custom-select custom-select-lg mb-3" name="seat">
           <option selected>Select a seat to contest</option>
           <option value="chairperson">Chairperson</option>
-          <option value="SEcretary general">Secretary General</option>
+          <option value="Secretary general">Secretary General</option>
           <option value="Academics">Academics</option>
           <option value="Entertainment">Entertainment</option>
     </select>
@@ -155,7 +128,13 @@ session_start();
     $result = mysqli_query($con,$query);
 
     if(!$result){
-      echo "not executed";
+      echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Hello!</strong> Your application has received. Thank you we will keep in touch.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>';
+
 
     }
   }
