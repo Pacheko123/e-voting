@@ -68,7 +68,7 @@ $result=mysqli_query($con,"SELECT *FROM aspirant"); ?>
                 <td><?php echo $row['year']; ?></td>
                <!--td><a href="EditCategory.php?edit=<?php echo $row['service_category_id'];?>" class= "edit-btn"> <img src="../public/images/icon_content_small.gif" alt="image" class="photo" style="width: 20px; height: 20px;border-radius: 300px; margin-top: 1px;"></a></td>-->
               <td><div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" value="<">
     <label class="form-check-label" for="exampleCheck1"></label>
   </div></td>
              </tr>
@@ -82,7 +82,8 @@ $result=mysqli_query($con,"SELECT *FROM aspirant"); ?>
 
 </div>
 <div class="text-right">
-<button type="button" class="btn btn-dark">SUBMIT</button>
+  <a href='../components/editUser.php?asp_id=<?php echo $user['asp_id'] ?>' class="btn btn-dark"> SUBMIT</a>
+
 </div>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>

@@ -19,7 +19,7 @@ if (mysqli_num_rows($sql) >0 ) {
 			header("location: admin.php");
 			}
 			else if($member['rank']=='voter'){
-			header("location: admin.php");
+			header("location: voter.php");
 			}
 }
 else {
