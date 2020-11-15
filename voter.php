@@ -113,13 +113,24 @@ session_start();
           <input type="text" id="orangeForm-pass" class="form-control validate" name="adm">
           <label data-error="wrong" data-success="right" for="orangeForm-pass" >Admission Number</label>
         </div>
-
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="orangeForm-pass" class="form-control validate" name="adm">
+          <label data-error="wrong" data-success="right" for="orangeForm-pass" >Year Of study</label>
+        </div>
         <select class="browser-default custom-select custom-select-lg mb-3" name="seat">
           <option selected>Select a seat to contest</option>
           <option value="chairperson">Chairperson</option>
           <option value="SEcretary general">Secretary General</option>
           <option value="Academics">Academics</option>
           <option value="Entertainment">Entertainment</option>
+    </select>
+    <select class="browser-default custom-select custom-select-lg mb-3" name="seat">
+          <option selected>Select a political party</option>
+          <option value="Jubilee">Jubilee</option>
+          <option value="Alliance">Alliance</option>
+          <option value="Big Fish">Big Fish</option>
+          <option value="Democrats">Democrats</option>
     </select>
 
       </div>
