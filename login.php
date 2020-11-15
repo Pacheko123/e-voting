@@ -3,7 +3,7 @@
 		session_start();
 		}
 		if (isset($_SESSION['SESS_NAME'])!="") {
-			header("Location: voter.php");
+			header("Location: admin.php");
 		}
 	?>
 	<br>

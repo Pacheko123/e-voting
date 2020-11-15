@@ -115,7 +115,7 @@ session_start();
         </div>
         <div class="md-form mb-4">
           <i class="fas fa-lock prefix grey-text"></i>
-          <input type="text" id="orangeForm-pass" class="form-control validate" name="adm">
+          <input type="text" id="orangeForm-pass" class="form-control validate" name="year">
           <label data-error="wrong" data-success="right" for="orangeForm-pass" >Year Of study</label>
         </div>
         <select class="browser-default custom-select custom-select-lg mb-3" name="seat">
@@ -125,7 +125,7 @@ session_start();
           <option value="Academics">Academics</option>
           <option value="Entertainment">Entertainment</option>
     </select>
-    <select class="browser-default custom-select custom-select-lg mb-3" name="seat">
+    <select class="browser-default custom-select custom-select-lg mb-3" name="party">
           <option selected>Select a political party</option>
           <option value="Jubilee">Jubilee</option>
           <option value="Alliance">Alliance</option>
@@ -148,8 +148,10 @@ session_start();
     $phone = $_POST['phone'];
     $adm = $_POST['adm'];
     $seat = $_POST['seat'];
+      $party = $_POST['party'];
+        $year = $_POST['year'];
 
-    $query = "INSERT INTO aspirant (asp_name,phone,asp_adm,asp_seat) VALUES('$name','$phone','$adm','$seat')";
+    $query = "INSERT INTO aspirant (asp_name,phone,asp_adm,asp_seat,party,year) VALUES('$name','$phone','$adm','$seat' ,'$party', '$year')";
     $result = mysqli_query($con,$query);
 
     if(!$result){
