@@ -4,11 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Home</title>
 <script src="jscript/validation.js" type="text/javascript"></script>
+<?php include("include/static.php"); ?>
 </head>
 
 <body bgcolor="#EBE9E9">
 <!-- <marquee>Welcome To Online Voting System</marquee> -->
 <center><font size='5' >
-<a href="voter.php">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="lan_view.php">Vote Results</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a>
+<a href="voter.php">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="lan_view.php">Vote Results</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="voter.php" data-toggle="modal" data-target="#modalRegisterForm">Apply</a>&nbsp;&nbsp;|<a href="logout.php">Logout</a>
 &nbsp;&nbsp;|&nbsp;&nbsp;<a href="change_pass.php">Change Password</a>
-</font></center>
+</font>
+
+<i class="fas fa-envelope fa-2x"></i><span class="counter counter-lg">9</span>&nbsp;&nbsp;
+
+
+</center>

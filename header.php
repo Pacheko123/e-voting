@@ -35,7 +35,7 @@
 		        <a class="nav-link" href="register.php">REGISTER</a>
 		      </li>
 					<li class='nav-item'>
-						<a class="nav-link" href="login.php">VOTE</a>
+						<a class="nav-link" href="login.php">LOGIN</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">POLICY</a>
