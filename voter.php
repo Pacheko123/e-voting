@@ -22,7 +22,11 @@ session_start();
 <!-- </div> -->
 <!-- <div class="container-fluid"> -->
 
+<<<<<<< HEAD
 <?php 
+=======
+<?php
+>>>>>>> 577552013fa8cfd54354f05695ac72a6775473a4
 $count = 1;
 $result=mysqli_query($con,"SELECT * FROM aspirant WHERE asp_seat='chairperson'  "); ?>
 
@@ -31,6 +35,7 @@ $result=mysqli_query($con,"SELECT * FROM aspirant WHERE asp_seat='chairperson'  
   <div class="row display-asp">
  <?php while ($row=mysqli_fetch_array($result)){
           ?>
+<<<<<<< HEAD
           
     <div class="card border-success mb-3 col-md-4" style="max-width: 20rem;">
      
@@ -43,6 +48,19 @@ $result=mysqli_query($con,"SELECT * FROM aspirant WHERE asp_seat='chairperson'  
        
   <a href='cast.php?asp_id=<?php echo $row['asp_id'] ; ?>' class="btn btn-dark"> VOTE</a>
       </div>
+=======
+
+    <div class="card border-success mb-3 col-md-4" style="max-width: 20rem;">
+      <div class="card-header"><?php echo $row['asp_name']; ?></div>
+      <div class="card-body text-success">
+        <h5 class="card-title"><?php echo $row['asp_seat']; ?></h5>
+        <p class="card-text"><?php echo $row['party']; ?></p>
+
+        <!-- <input type="radio" name="1" value="1"> -->
+        <input type="radio" name="2" value="<?php echo $row['asp_id']; ?>">
+      </div>
+
+>>>>>>> 577552013fa8cfd54354f05695ac72a6775473a4
     </div>
 
     <?php }?>
@@ -50,12 +68,21 @@ $result=mysqli_query($con,"SELECT * FROM aspirant WHERE asp_seat='chairperson'  
   </form>
 </div>
 
+<<<<<<< HEAD
 <!--div class="text-right">
   <a href='cast.php?asp_id=<?php echo $row['asp_id']; ?>' class="btn btn-dark"> CAST</a>
 
 </div>-->
      
    
+=======
+<div class="text-right">
+  <a href='cast.php?asp_id=<?php echo $row['asp_id']; ?>' class="btn btn-dark"> CAST</a>
+
+</div>
+
+
+>>>>>>> 577552013fa8cfd54354f05695ac72a6775473a4
 
 <!-- Application for a position modal -->
 <form method="post">
@@ -127,15 +154,24 @@ $result=mysqli_query($con,"SELECT * FROM aspirant WHERE asp_seat='chairperson'  
     $query = "INSERT INTO aspirant (asp_name,phone,asp_adm,asp_seat,party,year) VALUES('$name','$phone','$adm','$seat' ,'$party', '$year')";
     $result = mysqli_query($con,$query);
 
+<<<<<<< HEAD
     if(!$result){
       echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+=======
+    if($result){
+      
+echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+>>>>>>> 577552013fa8cfd54354f05695ac72a6775473a4
   <strong>Hello!</strong> Your application has received. Thank you we will keep in touch.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 577552013fa8cfd54354f05695ac72a6775473a4
     }
   }
  ?>
